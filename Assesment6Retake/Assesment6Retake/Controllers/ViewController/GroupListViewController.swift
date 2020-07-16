@@ -26,7 +26,6 @@ class GroupListViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func addBarButtonTapped(_ sender: Any) {
-        
         let alertController = UIAlertController(title: "Add Person", message: nil, preferredStyle: .alert)
         alertController.addTextField { (texField) in
             texField.placeholder = "Add a person."
@@ -58,14 +57,17 @@ class GroupListViewController: UIViewController {
     }
     
     func updateView() {
-        self.groupListTableView.reloadData()
+        DispatchQueue.main.async {
+            self.groupListTableView.reloadData()
+        }
     }
     
     func setupViews() {
         self.groupListTableView.delegate = self
         self.groupListTableView.dataSource = self
+        PersonController.shared.loadFromPersistenceStore()
+        refreshRandomize()
     }
-
 }
 
 extension GroupListViewController: UITableViewDelegate, UITableViewDataSource {

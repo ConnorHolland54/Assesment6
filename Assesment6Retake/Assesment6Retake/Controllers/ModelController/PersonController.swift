@@ -76,14 +76,45 @@ class PersonController {
     func addPerson(with fullName: String) {
         let newPerson = Person(fullName: fullName)
         persons.append(newPerson)
+        saveToPersistenceStore()
     }
     
     //delete
     func delete(person: Person) {
         guard let index = persons.firstIndex(of: person) else {return}
         persons.remove(at: index)
+        saveToPersistenceStore()
     }
     
     // MARK: - Persistence
+    //MARK: - Persistence
+    func createPersistenceStore() -> URL {
+        let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let fileUrl = url[0].appendingPathComponent("Person.json") // <- Change File Name
+        return fileUrl
+    }
     
+    //save
+    func saveToPersistenceStore() {
+        let jsonEncoder = JSONEncoder()
+        
+        do {
+            let data =  try jsonEncoder.encode(persons) //<- Change source of truth
+            try data.write(to: createPersistenceStore())
+        } catch {
+            print("Error encoding our person: \(error) -- \(error.localizedDescription)") //<- update error message
+        }
+    }
+    
+    //load
+    func loadFromPersistenceStore() {
+        let jsonDecoder = JSONDecoder()
+        
+        do {
+            let data = try Data(contentsOf: createPersistenceStore())
+            persons = try jsonDecoder.decode([Person].self , from: data) //<- update source of truth & update decoded type.
+        } catch {
+            print("Error decoding our person: \(error), -- \(error.localizedDescription)") //<- update error message
+        }
+    }
 }
