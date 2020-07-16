@@ -14,6 +14,7 @@
 		DE312D4824C0AFAE004B44BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE312D4624C0AFAE004B44BA /* LaunchScreen.storyboard */; };
 		DED9C51924C0B1C80022611A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9C51824C0B1C80022611A /* Person.swift */; };
 		DED9C51B24C0B2760022611A /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9C51A24C0B2760022611A /* PersonController.swift */; };
+		DED9C51D24C0B58A0022611A /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9C51C24C0B58A0022611A /* GroupListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DE312D4924C0AFAE004B44BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DED9C51824C0B1C80022611A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		DED9C51A24C0B2760022611A /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
+		DED9C51C24C0B58A0022611A /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		DE312D5524C0B013004B44BA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DED9C51C24C0B58A0022611A /* GroupListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			files = (
 				DED9C51B24C0B2760022611A /* PersonController.swift in Sources */,
 				DED9C51924C0B1C80022611A /* Person.swift in Sources */,
+				DED9C51D24C0B58A0022611A /* GroupListViewController.swift in Sources */,
 				DE312D3C24C0AFAD004B44BA /* AppDelegate.swift in Sources */,
 				DE312D3E24C0AFAD004B44BA /* SceneDelegate.swift in Sources */,
 			);
