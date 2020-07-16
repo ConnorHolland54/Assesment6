@@ -42,7 +42,6 @@ class GroupListViewController: UIViewController {
         alertController.addAction(cancelAction)
         alertController.addAction(addAction)
         self.present(alertController, animated: true)
-        
     }
     
     @IBAction func randomizeButtonTapped(_ sender: Any) {
