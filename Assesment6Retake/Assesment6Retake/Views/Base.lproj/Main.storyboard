@@ -10,7 +10,7 @@
         <!--Random Pairs-->
         <scene sceneID="x8h-jp-u2l">
             <objects>
-                <viewController id="Oxq-p1-j6D" sceneMemberID="viewController">
+                <viewController id="Oxq-p1-j6D" customClass="GroupListViewController" customModule="Assesment6Retake" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgQ-Zg-THi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,6 +45,9 @@
                                 <rect key="frame" x="146.5" y="612" width="121" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="randomizeButtonTapped:" destination="Oxq-p1-j6D" eventType="touchUpInside" id="ogz-93-NYS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,8 +61,15 @@
                         <viewLayoutGuide key="safeArea" id="cWn-p5-8zG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Random Pairs" id="IlE-II-Ff4">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="G88-zq-6zN"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="G88-zq-6zN">
+                            <connections>
+                                <action selector="addBarButtonTapped:" destination="Oxq-p1-j6D" id="vr8-bB-4VH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="groupListTableView" destination="ybQ-96-ktj" id="09r-h1-eh9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yvi-1Y-tzi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
